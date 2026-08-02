@@ -1,0 +1,11 @@
+# 作業用の指示メモ（公開しない）
+INSTRUCTION.md
+.claude/
+
+# macOS
+.DS_Store
+
+# エディタ
+.vscode/
+.idea/
+*.swp

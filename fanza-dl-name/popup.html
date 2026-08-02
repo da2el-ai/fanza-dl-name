@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>FANZAファイル名指定DL の設定</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <h1>FANZAファイル名指定DL</h1>
+
+    <div class="field">
+      <label for="template">全体テンプレート</label>
+      <input type="text" id="template" spellcheck="false" />
+      <p class="hint">
+        <code>{{サークル名}}</code> と <code>{{作品名}}</code> が置換されます
+      </p>
+    </div>
+
+    <div class="field">
+      <label for="circleSelector">サークル名のセレクタ</label>
+      <input type="text" id="circleSelector" spellcheck="false" />
+    </div>
+
+    <div class="field">
+      <label for="titleSelector">作品名のセレクタ</label>
+      <input type="text" id="titleSelector" spellcheck="false" />
+    </div>
+
+    <div class="buttons">
+      <button type="button" id="save" class="primary">保存</button>
+      <button type="button" id="reset">デフォルトに戻す</button>
+    </div>
+
+    <p class="status" id="status" role="status"></p>
+
+    <script src="config.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+:root {
+  color-scheme: light dark;
+  --fg: #1a1a1a;
+  --bg: #ffffff;
+  --muted: #666666;
+  --border: #cccccc;
+  --accent: #d81b60;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #e8e8e8;
+    --bg: #232323;
+    --muted: #a0a0a0;
+    --border: #4a4a4a;
+    --accent: #f06292;
+  }
+}
+
+body {
+  width: 360px;
+  margin: 0;
+  padding: 16px;
+  color: var(--fg);
+  background: var(--bg);
+  font-family:
+    system-ui,
+    -apple-system,
+    "Hiragino Sans",
+    "Noto Sans JP",
+    sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.field {
+  margin-bottom: 14px;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 8px;
+  color: var(--fg);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 12px;
+}
+
+input[type="text"]:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: -1px;
+  border-color: var(--accent);
+}
+
+.hint {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+code {
+  padding: 1px 4px;
+  background: color-mix(in srgb, var(--fg) 10%, transparent);
+  border-radius: 3px;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+button {
+  padding: 6px 14px;
+  color: var(--fg);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  background: color-mix(in srgb, var(--fg) 8%, transparent);
+}
+
+button.primary {
+  color: #ffffff;
+  background: var(--accent);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+button.primary:hover {
+  filter: brightness(1.1);
+}
+
+.status {
+  min-height: 1.6em;
+  margin: 10px 0 0;
+  color: var(--accent);
+  font-size: 12px;
+}
