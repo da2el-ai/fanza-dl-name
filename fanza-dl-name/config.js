@@ -9,6 +9,8 @@ const DEFAULT_SETTINGS = {
   circleSelector: ".circleNamezjQ9A",
   // 作品名を取得する querySelector
   titleSelector: ".productDetailTitleRdzpP a",
+  // 同人一覧ページで購入済み商品を薄く表示するか
+  dimPurchased: true,
 };
 
 // 要素が見つからなかった場合に使う値

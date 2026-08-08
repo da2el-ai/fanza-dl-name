@@ -1,9 +1,15 @@
 // 設定画面の読み込み・保存
 
-const fields = {
+// テキスト入力の項目
+const textFields = {
   template: document.getElementById("template"),
   circleSelector: document.getElementById("circleSelector"),
   titleSelector: document.getElementById("titleSelector"),
+};
+
+// チェックボックスの項目
+const checkFields = {
+  dimPurchased: document.getElementById("dimPurchased"),
 };
 const statusEl = document.getElementById("status");
 
@@ -20,8 +26,11 @@ const showStatus = (message) => {
 
 // 設定値を入力欄へ反映する
 const applyToForm = (settings) => {
-  for (const [key, el] of Object.entries(fields)) {
+  for (const [key, el] of Object.entries(textFields)) {
     el.value = settings[key];
+  }
+  for (const [key, el] of Object.entries(checkFields)) {
+    el.checked = settings[key];
   }
 };
 
@@ -31,13 +40,12 @@ loadSettings().then(applyToForm);
 // 保存
 document.getElementById("save").addEventListener("click", async () => {
   const settings = {};
-  for (const [key, el] of Object.entries(fields)) {
-    settings[key] = el.value.trim();
+  for (const [key, el] of Object.entries(textFields)) {
+    // 空欄の項目はデフォルト値に戻す
+    settings[key] = el.value.trim() || DEFAULT_SETTINGS[key];
   }
-
-  // 空欄の項目はデフォルト値に戻す
-  for (const [key, value] of Object.entries(settings)) {
-    if (!value) settings[key] = DEFAULT_SETTINGS[key];
+  for (const [key, el] of Object.entries(checkFields)) {
+    settings[key] = el.checked;
   }
 
   await chrome.storage.sync.set(settings);
