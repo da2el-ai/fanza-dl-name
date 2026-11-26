@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "FANZAファイル名指定DL",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "FANZAの購入済み作品ダウンロードにサークル名・作品名からファイル名を付けます",
   "permissions": ["downloads", "storage"],
   "background": {
